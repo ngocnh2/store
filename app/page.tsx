@@ -1,14 +1,16 @@
+import LoadingContainer from "@/components/global/LoadingContainer";
+import FeatureProducts from "@/components/home/FeatureProducts";
+import Hero from "@/components/home/Hero";
 import { Button } from "@/components/ui/button";
-import React from "react";
+import { Suspense } from "react";
 
 const HomePage = () => {
   return (
-    <div>
-      <div className="text-3xl">HomePage</div>
-      <Button variant="outline" size="lg">
-        Click here !
-      </Button>
-    </div>
+    <>
+      <Hero />
+      <Suspense fallback={<LoadingContainer />} />
+      <FeatureProducts />
+    </>
   );
 };
 
